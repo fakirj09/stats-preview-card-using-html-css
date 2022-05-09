@@ -1,0 +1,102 @@
+:root {
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Lexend', sans-serif;
+  --main-bg: hsl(233, 47%, 7%);
+  --card-bg: hsl(244, 38%, 16%);
+  --color-white: hsl(0, 0%, 100%);
+}
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  line-height: 1.6;
+  min-height: 100vh;
+  background-color: var(--main-bg);
+  color: var(--color-white);
+  padding: 5rem 2rem;
+}
+.card {
+  background-color: var(--card-bg);
+  min-height: 44rem;
+  display: flex;
+  border-radius: 0.7rem;
+  width: min(100%, 110rem);
+}
+.card > * {
+  flex-basis: 50%;
+}
+.card-content {
+  padding: 3.25rem;
+  display: grid;
+  place-items: center;
+}
+.card-header {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--color-white);
+  line-height: 1.3;
+}
+.card-header .purple {
+  color: hsl(277, 64%, 61%);
+}
+.card-text {
+  margin-top: 2.5rem;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+.stats {
+  display: grid;
+  margin-top: 7rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+.card-item {
+  text-transform: uppercase;
+}
+.card-number {
+  color: var(--color-white);
+  font-size: clamp(1.7rem, 4vw, 2.1rem);
+  font-weight: 700;
+}
+.card-name {
+  font-size: 1.3rem;
+  font-family: (--font-secondary);
+  color: hsla(0, 0%, 100%, 0.6);
+}
+.card-img {
+  background-color: hsla(277, 64%, 61);
+}
+.card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column-reverse;
+    width: 50rem;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+  .card-content {
+    padding: 4rem 3rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .stats-card {
+    margin-top: 5rem;
+    grid-template-columns: 1fr;
+  }
+}
